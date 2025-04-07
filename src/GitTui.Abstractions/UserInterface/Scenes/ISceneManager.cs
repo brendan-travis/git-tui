@@ -2,6 +2,6 @@ namespace GitTui.Abstractions.UserInterface.Scenes;
 
 public interface ISceneManager
 {
-    void DrawUi();
-    void SetScene(Scene scene);
+    public void DrawUi();
+    public void SetScene(Scene scene);
 }
