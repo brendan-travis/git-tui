@@ -6,6 +6,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>gittui</ToolCommandName>
     </PropertyGroup>
 
     <ItemGroup>
