@@ -1,0 +1,6 @@
+﻿services:
+  gittui:
+    image: gittui
+    build:
+      context: .
+      dockerfile: src/GitTui/Dockerfile
