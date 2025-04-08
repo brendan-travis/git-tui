@@ -1,5 +1,5 @@
 using GitTui.Abstractions.UserInterface.Scenes;
-using Spectre.Console;
+using Spectre.Console.Rendering;
 
 namespace GitTui.UserInterface.Scenes;
 
@@ -7,16 +7,13 @@ public class SceneManager(IMainScene mainScene) : ISceneManager
 {
     private Scene _currentScene = Scene.Main;
 
-    public void DrawUi()
+    public IRenderable DrawUi()
     {
-        var layout = _currentScene switch
+        return _currentScene switch
         {
             Scene.Main => mainScene.GetLayout(),
             _ => throw new ArgumentOutOfRangeException()
         };
-
-        Console.Clear();
-        AnsiConsole.Write(layout);
     }
 
     public void SetScene(Scene scene) => _currentScene = scene;

@@ -64,7 +64,7 @@ public class GitService(ICommandState commandState) : IGitService
         if (_graphedLogLastUpdated >= DateTimeOffset.UtcNow - TimeSpan.FromSeconds(CacheLengthInSeconds))
             return _graphedLog;
 
-        _graphedLog = RunCommand("git", "log --oneline --graph --decorate --all -30");
+        _graphedLog = RunCommand("git", "log --oneline --graph --decorate --all -50");
         _graphedLogLastUpdated = DateTimeOffset.UtcNow;
 
         return _graphedLog;

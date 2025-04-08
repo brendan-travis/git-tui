@@ -46,7 +46,7 @@ public class MainScene(IGitService gitService, ICommandState commandState) : IMa
             .Update(new Panel(isFetching ? $"Fetching{_indicator[_indicatorIndex]}" : $"Last Fetched:\n{lastFetchTime}") { Expand = true })
             .Size(30);
 
-        layout["bottom-left"].Update(new Panel(commandState.IsCommandWindowActive ? commandState.CommandOutput : status) { Expand = true });
+        layout["bottom-left"].Update(new Panel(commandState.IsCommandWindowActive ? commandState.CommandOutput.EscapeMarkup() : status) { Expand = true });
         layout["bottom-right"].Update(new Panel(graphedLog) { Expand = true });
         
         layout["top-bar-command"]
